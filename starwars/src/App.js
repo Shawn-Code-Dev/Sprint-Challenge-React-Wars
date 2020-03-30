@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import PeopleList from './components/PeopleList/PeopleList'
+import People from './components/People/People';
+import styled from 'styled-components';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -9,10 +12,21 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  const Container = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    justify-content: space-around;
+  `
+
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
+    <>
+    <h1 className="Header">React Wars</h1>
+    <Container>
+      <PeopleList />
+    </Container>
+    </>
   );
 }
 
